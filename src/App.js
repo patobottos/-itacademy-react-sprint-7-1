@@ -28,10 +28,18 @@ function App() {
             <label for="webpage"> Una página web (500€) </label>
             {webpage ? (
               <Panell>
-                <label className="web-details-tag" htmlFor="pages">Número de páginas</label>
-                <InputsCounter setNumber={setWebPagesNum} />
-                <label className="web-details-tag" htmlFor="languages">Número de idiomas</label>
-                <InputsCounter setNumber={setLanguagesNum} />
+                <div className="webpage-item">
+                  <label className="web-details-tag" htmlFor="pages">
+                    Número de páginas
+                  </label>
+                  <InputsCounter setNumber={setWebPagesNum} />
+                </div>
+                <div className="webpage-item">
+                  <label className="web-details-tag" htmlFor="languages">
+                    Número de idiomas
+                  </label>
+                  <InputsCounter setNumber={setLanguagesNum} />
+                </div>
               </Panell>
             ) : (
               ""
@@ -39,11 +47,11 @@ function App() {
           </li>
           <li>
             <input type="checkbox" name="seo" onChange={(e) => setSeo(!seo)} />
-            <label for="seo"> Una consultoria SEO (300€)</label>
+            <label htmlFor="seo"> Una consultoria SEO (300€)</label>
           </li>
           <li>
             <input type="checkbox" name="ads" onChange={(e) => setAds(!ads)} />
-            <label for="ads"> Una campaña de Google Ads (200€) </label>
+            <label htmlFor="ads"> Una campaña de Google Ads (200€) </label>
           </li>
           <li>
             <div className="total">Preu total: {totalPrice}€</div>
@@ -55,4 +63,3 @@ function App() {
 }
 
 export default App;
-

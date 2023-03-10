@@ -3,13 +3,16 @@ import styled from "styled-components";
 export const Panell = styled.div`
     background-color: #B7BAD2;
     color: #171926;
-    width: 380px;
-    margin: 10px 0px; 
+    width: 100%;
+    /*width: 380px;*/
+    margin: 10px 0px;
     border: 1px solid #171926;
     border-radius: 6px;
     padding: 10px;
-    display: grid;
-    grid-template-columns: 2.5fr 2fr;
+    /*display: grid;
+    grid-template-columns: 2.5fr 2fr;*/
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 `

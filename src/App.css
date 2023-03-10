@@ -46,17 +46,17 @@
   display: flex;
   justify-content: space-between;
 }
-
+/*
 .services-list li:last-child {
   border-top: 1px solid #ccc;
   margin-top: 1rem;
   padding-top: 1rem;
-}
-
+}*/
+/*
 .services-list-item label {
   vertical-align: text-bottom;
   margin-left: 0.2rem;
-}
+}*/
 
 .total {
   font-weight: 700;
@@ -64,7 +64,6 @@
 }
 
 .web-details-tag {
-  text-align: right;
   background-color: #B7BAD2;
   color: black;
 }
@@ -81,4 +80,8 @@
 
 .web-details-container {
   background-color: #B7BAD2;
+}
+
+.webpage-item {
+  border: 5px solid yellow;
 }
