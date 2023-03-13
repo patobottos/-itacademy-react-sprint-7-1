@@ -7,7 +7,7 @@ const savedData = localStorage.getItem("data");
 const savedDataParse = savedData
   ? JSON.parse(savedData)
   : { webpage: false, seo: false, ads: false, webPagesNum: 0, languagesNum: 0 };
-console.log("savedDataParse ", savedDataParse);
+console.log("Camps Seleccionats guardats en localStorage", savedDataParse);
 
 function App() {
   const [webpage, setWebpage] = useState(false);
