@@ -1,14 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
-import { Panell } from "./components/Panell.styled";
-import InputsCounter from "./components/inputsCounter";
+import { Panell } from "./app/styles";
+import Counter from "./components/Counter";
+
+const savedData = localStorage.getItem("data");
+const savedDataParse = savedData
+  ? JSON.parse(savedData)
+  : { webpage: false, seo: false, ads: false, webPagesNum: 0, languagesNum: 0 };
+console.log("savedDataParse ", savedDataParse);
 
 function App() {
   const [webpage, setWebpage] = useState(false);
   const [seo, setSeo] = useState(false);
   const [ads, setAds] = useState(false);
-  const [webPagesNum, setWebPagesNum] = useState(1);
-  const [languagesNum, setLanguagesNum] = useState(1);
+  const [webPagesNum, setWebPagesNum] = useState(0);
+  const [languagesNum, setLanguagesNum] = useState(0);
+
+  useEffect(() => {
+    const inputsObject = { webpage, seo, ads, webPagesNum, languagesNum };
+    localStorage.setItem("data", JSON.stringify(inputsObject));
+  }, [webpage, seo, ads, webPagesNum, languagesNum]);
 
   const webservices = 500 + webPagesNum * languagesNum * 30;
   const totalPrice =
@@ -25,21 +36,20 @@ function App() {
               name="webpage"
               onChange={(e) => setWebpage(!webpage)}
             />
-            <label for="webpage"> Una página web (500€) </label>
+            <label htmlFor="webpage"> Una página web (500€) </label>
             {webpage ? (
               <Panell>
-                <div className="webpage-item">
-                  <label className="web-details-tag" htmlFor="pages">
-                    Número de páginas
-                  </label>
-                  <InputsCounter setNumber={setWebPagesNum} />
-                </div>
-                <div className="webpage-item">
-                  <label className="web-details-tag" htmlFor="languages">
-                    Número de idiomas
-                  </label>
-                  <InputsCounter setNumber={setLanguagesNum} />
-                </div>
+                <Counter
+                  setNumber={setWebPagesNum}
+                  txt="Número de páginas"
+                  val={webPagesNum}
+                />
+
+                <Counter
+                  setNumber={setLanguagesNum}
+                  txt="Número de idiomas"
+                  val={languagesNum}
+                />
               </Panell>
             ) : (
               ""

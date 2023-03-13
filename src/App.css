@@ -2,9 +2,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 5px;
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;;
-  background-color: #314057;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #E1E5EA;
+}
+
+body {
+  background-color: #314057;
 }
 
 .main-container {
@@ -34,7 +37,7 @@
 }
 
 .services-list {
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -46,17 +49,6 @@
   display: flex;
   justify-content: space-between;
 }
-/*
-.services-list li:last-child {
-  border-top: 1px solid #ccc;
-  margin-top: 1rem;
-  padding-top: 1rem;
-}*/
-/*
-.services-list-item label {
-  vertical-align: text-bottom;
-  margin-left: 0.2rem;
-}*/
 
 .total {
   font-weight: 700;
@@ -68,20 +60,8 @@
   color: black;
 }
 
-.button {
-  background-color: #555;
-  border: 2px solid #ccc;
-  border-radius: 6px;
-  width: 28px;
-  height: 28px;
-  padding: 2px;
-  font-weight: 600;
-}
 
 .web-details-container {
   background-color: #B7BAD2;
 }
 
-.webpage-item {
-  border: 5px solid yellow;
-}
