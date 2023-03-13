@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { Panell } from "./app/styles";
+import { MainContainer, Panell } from "./app/styles";
 import Counter from "./components/Counter";
 
 const savedData = localStorage.getItem("data");
@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="main-container">
+      <MainContainer>
         <h3 className="form-title">¿Qué quieres hacer?</h3>
         <ul className="services-list">
           <li>
@@ -67,7 +67,7 @@ function App() {
             <div className="total">Preu total: {totalPrice}€</div>
           </li>
         </ul>
-      </div>
+      </MainContainer>
     </div>
   );
 }

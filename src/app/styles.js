@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const MainContainer = styled.div`
+  border: 1px solid #F5F5F5;
+  border-radius: 6px;
+  padding: 10px;
+`
+
 export const Panell = styled.div`
   background-color: #b7bad2;
   color: #171926;
