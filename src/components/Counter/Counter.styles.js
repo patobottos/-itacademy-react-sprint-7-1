@@ -4,18 +4,22 @@ export const WebDetailsInput = styled.input`
   border: 1px solid #f5f5f5;
   border-radius: 4px;
   width: 6vw;
-  padding: 3px 0px;
-  margin: 5px 10px;
+  padding: 3px;
+  height: 26px;
   background-color: #fafafa;
   text-align: center;
   color: #000;
+  margin: 0 8px;
 `;
 
 export const Label = styled.label`
-  margin-right: 10px;
   color: #222222;
 `;
 
 export const Container = styled.div`
   background-color: #b7bad2;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  padding: 10px;
 `;

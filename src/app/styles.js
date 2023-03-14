@@ -10,7 +10,7 @@ export const MainContainer = styled.div`
 export const Panell = styled.div`
   background-color: #b7bad2;
   color: #171926;
-  width: 95%;
+  width: 90%;
   margin: 10px 0px;
   border: 1px solid #171926;
   border-radius: 6px;
@@ -50,7 +50,7 @@ export const FormTitle = styled.div`
 export const ServicesList = styled.div`
   margin: 10px auto 0 auto;
   padding: 20px 40px;
-  width: 70%;
+  width: 80%;
   vertical-align: text-bottom;
   list-style: none;
   line-height: 1.3rem;
@@ -96,3 +96,10 @@ export const ButtonHome = styled.button`
   cursor: pointer; 
   color: blue;
 `;
+
+export const PopupText = styled.div`
+  margin: 5px;
+  color: black;
+  line-height: 20px;
+
+` 

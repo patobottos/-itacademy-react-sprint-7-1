@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
-//import '../App.css';
+
 import {
   MainContainer,
   FormTitle,
   ServicesList,
   Panell,
   Total,
-} from '../app/styles';
+  PopupText,
+} from "../app/styles";
+
 import Counter from "../components/Counter/Counter";
+import PopupWindow from "../components/PopupWindow/PopupWindow";
 
 const savedData = localStorage.getItem("data");
 const savedDataParse = savedData
@@ -21,6 +24,7 @@ const Page2 = () => {
   const [ads, setAds] = useState(false);
   const [webPagesNum, setWebPagesNum] = useState(0);
   const [languagesNum, setLanguagesNum] = useState(0);
+  const [popupOpen, setPopupOpen] = useState(false);
 
   useEffect(() => {
     const inputsObject = { webpage, seo, ads, webPagesNum, languagesNum };
@@ -30,6 +34,10 @@ const Page2 = () => {
   const webservices = 500 + webPagesNum * languagesNum * 30;
   const totalPrice =
     (webpage ? webservices : 0) + (seo ? 300 : 0) + (ads ? 200 : 0);
+
+  const togglePopup = () => {
+    setPopupOpen((prev) => !prev);
+  };
 
   return (
     <MainContainer>
@@ -50,12 +58,14 @@ const Page2 = () => {
                 setNumber={setWebPagesNum}
                 txt="Número de páginas"
                 val={webPagesNum}
+                togglePopup={togglePopup}
               />
 
               <Counter
                 setNumber={setLanguagesNum}
                 txt="Número de idiomas"
                 val={languagesNum}
+                togglePopup={togglePopup}
               />
             </Panell>
           ) : (
@@ -74,6 +84,22 @@ const Page2 = () => {
           <Total>Preu total: {totalPrice}€</Total>
         </li>
       </ServicesList>
+      {popupOpen && (
+        <PopupWindow
+          id="popup"
+          handleClose={togglePopup}
+          content={
+            <div>
+              <PopupText>
+                El sitio web que has seleccionado contendrá:{" "}
+              </PopupText>
+              <PopupText>
+                {webPagesNum} página/s web y {languagesNum} idioma/s.
+              </PopupText>
+            </div>
+          }
+        />
+      )}
     </MainContainer>
   );
 };

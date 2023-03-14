@@ -1,9 +1,9 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Container, Label, WebDetailsInput } from "./Counter.styles";
 import { Button } from "../../app/styles";
+import InfoPopup from "../InfoPopup/InfoPopup";
 
-const Counter = ({ setNumber, txt, val }) => {
+const Counter = ({ setNumber, txt, val, togglePopup}) => {
   const [counter, setCounter] = useState(val);
 
   function adjustCounter(amount) {
@@ -29,6 +29,8 @@ const Counter = ({ setNumber, txt, val }) => {
         onChange={(e) => setCounter(e.target.valueAsNumber)}
       />
       <Button onClick={() => adjustCounter(1)}> + </Button>
+      <InfoPopup 
+        togglePopup={togglePopup} />
     </Container>
   );
 };
