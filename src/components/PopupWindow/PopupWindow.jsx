@@ -1,14 +1,16 @@
 import React from 'react';
-import { PopupBox, Box, PopupBtnClose } from './PopupWindow.styles';
+import { PopupBackground, PopupOverlay, PopupContentBox, PopupTitle } from './PopupWindow.styles';
 
-const PopupWindow = props => {
+const PopupWindow = ({ children, title, visible, setVisible }) => {
   return (
-    <PopupBox>
-      <Box>
-        <PopupBtnClose onClick={props.handleClose}> x </PopupBtnClose>
-        {props.content}
-      </Box>
-    </PopupBox>
+    <PopupBackground visible={visible}>
+      <PopupOverlay onClick={() => setVisible(false)}>
+        <PopupContentBox>
+          <PopupTitle>{title}</PopupTitle>
+          {children}
+        </PopupContentBox>
+      </PopupOverlay>
+    </PopupBackground>
   );
 }
 

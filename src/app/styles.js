@@ -93,13 +93,11 @@ export const ButtonHome = styled.button`
   font-size: 0.95rem;
   font-weight: 350;
   letter-spacing: 0.04em;
-  cursor: pointer; 
-  color: blue;
+  cursor: pointer;
 `;
 
 export const PopupText = styled.div`
   margin: 5px;
   color: black;
   line-height: 20px;
-
 ` 

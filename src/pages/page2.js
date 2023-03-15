@@ -6,11 +6,12 @@ import {
   ServicesList,
   Panell,
   Total,
-  PopupText,
+  ButtonHome,
 } from "../app/styles";
 
 import Counter from "../components/Counter/Counter";
 import PopupWindow from "../components/PopupWindow/PopupWindow";
+import PopupContents from "../app/PopupContents"
 
 const savedData = localStorage.getItem("data");
 const savedDataParse = savedData
@@ -19,6 +20,8 @@ const savedDataParse = savedData
 console.log("savedDataParse ", savedDataParse);
 
 const Page2 = () => {
+  const [budgetNumber, setBudgetNumber] = useState("");
+  const [customerName, setCustomerName] = useState("");
   const [webpage, setWebpage] = useState(false);
   const [seo, setSeo] = useState(false);
   const [ads, setAds] = useState(false);
@@ -39,15 +42,41 @@ const Page2 = () => {
     setPopupOpen((prev) => !prev);
   };
 
+
   return (
     <MainContainer>
+      <ServicesList>
+        <li>
+          <label htmlFor="budgetnumber">Número de presupuesto</label>
+          <input
+            type="text"
+            id="budgetnumber"
+            name="budgetnumber"
+            maxLength="60"
+            value={budgetNumber}
+            onChange={(e) => setBudgetNumber(e.target.value)}
+          />
+        </li>
+        <li>
+          <label htmlFor="customername">Nombre y apellidos: </label>
+          <input
+            type="text"
+            id="customername"
+            name="customername"
+            maxLength="70"
+            value={customerName}
+            onChange={(e) => setCustomerName(e.target.value)}
+          />
+        </li>
+      </ServicesList>
       <FormTitle>
-        <h3>¿Qué quieres hacer?</h3>
+        <h2>¿Qué quieres hacer?</h2>
       </FormTitle>
       <ServicesList>
         <li>
           <input
             type="checkbox"
+            id="webpage"
             name="webpage"
             onChange={(e) => setWebpage(!webpage)}
           />
@@ -73,32 +102,44 @@ const Page2 = () => {
           )}
         </li>
         <li>
-          <input type="checkbox" name="seo" onChange={(e) => setSeo(!seo)} />
+          <input
+            type="checkbox"
+            id="seo"
+            name="seo"
+            onChange={(e) => setSeo(!seo)}
+          />
           <label htmlFor="seo"> Una consultoria SEO (300€)</label>
         </li>
         <li>
-          <input type="checkbox" name="ads" onChange={(e) => setAds(!ads)} />
+          <input
+            type="checkbox"
+            id="ads"
+            name="ads"
+            onChange={(e) => setAds(!ads)}
+          />
           <label htmlFor="ads"> Una campaña de Google Ads (200€) </label>
         </li>
         <li>
-          <Total>Preu total: {totalPrice}€</Total>
+          <Total><h3>Preu total: {totalPrice}€</h3></Total>
+        </li>
+
+        <li>
+          <ButtonHome>
+            Registrar presupuesto
+          </ButtonHome>
         </li>
       </ServicesList>
       {popupOpen && (
         <PopupWindow
-          id="popup"
-          handleClose={togglePopup}
-          content={
-            <div>
-              <PopupText>
-                El sitio web que has seleccionado contendrá:{" "}
-              </PopupText>
-              <PopupText>
-                {webPagesNum} página/s web y {languagesNum} idioma/s.
-              </PopupText>
-            </div>
-          }
+        visible={popupOpen}
+        setVisible={() => setPopupOpen(false)}
+        >
+        <PopupContents 
+          webPagesNum={webPagesNum}
+          languagesNum={languagesNum}
         />
+        </PopupWindow>
+
       )}
     </MainContainer>
   );
