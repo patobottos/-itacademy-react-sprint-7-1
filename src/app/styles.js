@@ -101,5 +101,13 @@ export const PopupText = styled.div`
   margin: 5px;
   color: black;
   line-height: 20px;
+`
 
-` 
+export const PopupHeading = styled.h1`
+  margin: 5px 5px 20px 5px;
+  color: black;
+  line-height: 18px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+
+`

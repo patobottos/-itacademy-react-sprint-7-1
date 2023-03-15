@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const PopupBox = styled.div`
-  background-color: rgb(0, 0, 0, 0.5);
+  background-color: rgb(0, 0, 0, 0.4);
   width: 100%;
   height: 100vh;
   z-index: 1000;
@@ -13,12 +13,18 @@ export const PopupBox = styled.div`
 
 export const Box = styled.div`
   position: relative;
-  width: 80%;
+  top: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 90%;
+  height: 350px;
   background-color: #b7bad2;
   text-align: center;
-  margin: 60vh auto;
+  margin: auto;
   color: blueviolet;
-  border: 1px solid #76b5c5;
+  border: 4px solid #6743c4;
   border-radius: 6px;
   padding: 10px;
   overflow: auto;
@@ -27,7 +33,7 @@ export const Box = styled.div`
 
 export const PopupBtnClose = styled.button`
   background-color: #555;
-  border: 2px solid #ccc;
+  border: 2px solid #6743c4;
   border-radius: 5px;
   width: 28px;
   height: 28px;

@@ -7,6 +7,7 @@ import {
   Panell,
   Total,
   PopupText,
+  PopupHeading,
 } from "../app/styles";
 
 import Counter from "../components/Counter/Counter";
@@ -35,10 +36,17 @@ const Page2 = () => {
   const totalPrice =
     (webpage ? webservices : 0) + (seo ? 300 : 0) + (ads ? 200 : 0);
 
+  // OPENING/CLOSING POPUP
   const togglePopup = () => {
     setPopupOpen((prev) => !prev);
   };
-
+  /*
+  // TEST EXERCICI 6
+  useEffect(() => {
+    document.addEventListener("click", togglePopup);
+    return () => document.removeEventListener("click", togglePopup);
+  }, []);
+*/
   return (
     <MainContainer>
       <FormTitle>
@@ -91,6 +99,12 @@ const Page2 = () => {
           content={
             <div>
               <PopupText>
+                <PopupHeading>
+                  <span role="img" aria-label="info">
+                    ℹ️
+                  </span>
+                  Información de utilidad
+                </PopupHeading>
                 El sitio web que has seleccionado contendrá:{" "}
               </PopupText>
               <PopupText>
