@@ -16,13 +16,12 @@ Lliurament de l'sprint 7 de l'Itinerari de React de la IT Academy.
   - Exercici 3
   - Exercici 4
   - Exercici 5
+  - Exercici 6
 
 - Nivell 2
-  - Exercici 6
-  ~~- Exercici 7~~
-  ~~- Exercici 8~~
-  ~~- Exercici 9~~
-  ~~- Exercici 10~~
+  - Exercici 7
+  - Exercici 8
+  - Exercici 9
   
-- Nivell 3  
-  ~~- Exercici 11~~
+- Nivell 3
+  - Exercici 10
